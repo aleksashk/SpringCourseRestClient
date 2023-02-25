@@ -37,13 +37,14 @@ public class Communication {
             ResponseEntity<String> responseEntity = restTemplate.postForEntity(URL, employee, String.class);
             System.out.println("New Employee was added to DataBase");
             System.out.println(responseEntity.getBody());
-        }else {
+        } else {
             restTemplate.put(URL, employee);
             System.out.println("Employee with ID " + id + " was updated");
         }
     }
 
     public void deleteEmployee(int id) {
-
+        restTemplate.delete(URL + "/" + id);
+        System.out.println("Employee with id " + id + " was deleted from DB");
     }
 }

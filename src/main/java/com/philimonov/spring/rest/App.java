@@ -15,8 +15,10 @@ public class App {
 //        Employee empById = communication.getEmployee(1);
 //        System.out.println(empById);
 
-        Employee employee = new Employee("Garry", "Guddiny", "HR", 40000);
-        employee.setId(9);
-        communication.saveEmployee(employee);
+//        Employee employee = new Employee("Garry", "Guddiny", "HR", 40000);
+//        employee.setId(9);
+//        communication.saveEmployee(employee);
+
+        communication.deleteEmployee(9);
     }
 }
