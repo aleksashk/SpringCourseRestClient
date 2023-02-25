@@ -4,8 +4,6 @@ import com.philimonov.spring.rest.configuration.MyConfig;
 import com.philimonov.spring.rest.entity.Employee;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.List;
-
 public class App {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
@@ -14,8 +12,10 @@ public class App {
 //        List<Employee> allEmployees = communication.getAllEmployees();
 //        System.out.println(allEmployees);
 
-        Employee empById = communication.getEmployee(1);
-        System.out.println(empById);
+//        Employee empById = communication.getEmployee(1);
+//        System.out.println(empById);
 
+        Employee employee = new Employee("Garry", "Guddiny", "IT", 58700);
+        communication.saveEmployee(employee);
     }
 }
