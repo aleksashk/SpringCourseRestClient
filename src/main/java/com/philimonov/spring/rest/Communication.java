@@ -17,23 +17,25 @@ public class Communication {
     private RestTemplate restTemplate;
     private final String URL = "http://localhost:8080/employees";
 
-    public List<Employee> getAllEmployees(){
-        ResponseEntity<List<Employee>> responseEntity = restTemplate.exchange(URL, HttpMethod.GET, null, new ParameterizedTypeReference<List<Employee>>() {});
+    public List<Employee> getAllEmployees() {
+        ResponseEntity<List<Employee>> responseEntity = restTemplate.exchange(URL, HttpMethod.GET, null, new ParameterizedTypeReference<List<Employee>>() {
+        });
 
         List<Employee> allEmployees = responseEntity.getBody();
         return allEmployees;
     }
 
-    public Employee getEmployee(int id){
+    public Employee getEmployee(int id) {
+        Employee employee = restTemplate.getForObject(URL + "/" + id, Employee.class);
 
-        return null;
+        return employee;
     }
 
-    public void saveEmployee(Employee employee){
+    public void saveEmployee(Employee employee) {
 
     }
 
-    public void deleteEmployee(int id){
+    public void deleteEmployee(int id) {
 
     }
 }
